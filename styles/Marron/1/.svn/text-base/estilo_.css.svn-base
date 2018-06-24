@@ -1,0 +1,90 @@
+/**
+ * José Luis Estévez
+ */
+
+/*Diseño del menú*/
+
+#menu {
+    width:165px;
+    border-left: 0,5px solid #ccc;
+    border-right: 0,5px solid #ccc;
+    border-bottom: 0,5px solid white;
+    border-top: 0px solid #ffffff;
+    margin: 0px;
+    text-align : center;
+    display : block;
+}
+
+#titulo{
+    background-color: #060606;
+    color: white;
+    font-size : 15px;
+    height: 20px;
+    font-weight: bold;
+    /*text-transform: uppercase;*/
+}
+
+#menu a:link, #menu a:visited {
+    color: #000000;
+    display: block;
+    background: #ffffff;
+    padding: 2px 0 0 5px;
+    display: block;
+	height: 25px;
+}
+
+#menu a:hover{
+    color: #FFFFFF;
+    background: #5ac4f6;
+    padding: 2px 0 0 5px;
+    display: block;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#menu a:active {
+    color: white;
+    background: blue;
+}
+
+#menu ul { 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu a{border-width: 1px;
+    border-style: solid;
+    display: block;
+    border-color: white #888 #555 #bbb;
+    margin: 0;
+    padding: 2px 3px;
+    vertical-align: middle;
+    height: 25px;
+    text-decoration: none;
+    font-size : 11px;
+}
+
+#menu a, #menu h2 {
+	/*font: bold 0.7em/1.4em arial, helvetica, sans-serif;*/
+	font-size:12px;
+}
+
+#menu li {
+    position: relative;
+} 
+
+#menu ul ul ul {
+    position: absolute;
+    top: 0;
+    left: 100%; 
+    width: 100%; 
+}
+
+div#menu ul ul ul, div#menu ul ul li:hover ul ul {
+    display: none;
+}
+
+div#menu ul ul li:hover ul, div#menu ul ul ul li:hover ul {
+    display: block;
+}

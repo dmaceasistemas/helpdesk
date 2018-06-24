@@ -1,0 +1,46 @@
+SISTEMA DE HELPDESK VERSION 1.0
+#################################################################################################################
+#	Estadisticas, Reportes
+#################################################################################################################
+3.-Estadisticas por tipo de requerimiento.
+		Mostrar tiempos de solucion
+		Realizar una busqueda de los tipos de requerimientos por fecha
+		Escojer a los analistas
+#################################################################################################################
+#	Modificaciones
+#################################################################################################################	
+1.-Mejorar las lista de tipos de requerimientos, colocar más opciones.
+3.-Grafico por coordiaciones
+
+Opcion de requerimiento de telecomunicaciones ----> HABLAR CON DALIA TINEDO SOBRE ESTE TIPO DE 
+
+REQUERIMIENTO
+TELECOMUNICACIONES-->
+		PUNTO DE RED
+		
+--Punto de red, cambiar, activar, instalar, fallas
+--Swich y cableado activar b-lan
+
+Historial de Usuario
+
+Cambios Generales:
+Definir los Usuarios, Roles y Permisos de los sistemas opcion dinamica de lo que puede ver el usuario
+
+Cambios:
+Historial de usuario cambios general de esta interfaz
+Las soluciones posibles deben ser previamente aprobada	
+Falta ingresar los datos de solicitud cierre de cuentas.
+Crear el modulo de solicitudes de cuenta... para las cuentas por abrir y cerrar
+Fecha de revision del analista, cuando recibe el requerimiento por primera vez
+
+Realizar un log de los requerimientos para guardar los cambios de estados del mismo
+
+SISTEMA DE HELPDESK VERSION 2.0 --POR IMPLEMENTAR--
+Modulo de Inventario de Sofware y Hadware
+Modulo de Base de conocimiento
+----FAQ Preguntas frecuentes
+----Recomendaciones Tips de uso de Software y Hadware
+----Download
+
+
+---Modulo de Guardias de los analistas

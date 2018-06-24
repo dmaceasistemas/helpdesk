@@ -1,0 +1,250 @@
+<HTML>
+<Header>
+<Title>usuarios - Table</Title>
+<Link href="../css/doc.css" rel="stylesheet" type="text/css">
+</Header>
+<Body>
+<table class="logo">
+<tr>
+<td class="logo">
+<p>DbWrench Documentation: helpdesk</p>
+</td>
+</tr>
+</table>
+<table class="horzMenu">
+<tr>
+<td class="horzMenu"><a class="horzMenu" href="../index.html">Home</a></td><td class="horzMenu"><a class="horzMenu" href="../tables/index.html">Tables</a></td><td class="horzMenu"><a class="horzMenu" href="../schemas/index.html">Schemas</a></td><td class="horzMenu"><a class="horzMenu" href="../diagrams/index.html">Diagrams</a></td><td class="horzMenu"><a class="horzMenu" href="../foreignKeys/index.html">Foreign Keys</a></td><td class="horzMenu"><a class="horzMenu" href="../indexes/index.html">Indexes</a></td><td class="horzMenuFiller"></td>
+</tr>
+</table>
+<hr>
+<table class="pageTitle">
+<tr>
+<td class="pageTitle">
+<p>Table: usuarios</p>
+</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="8">Columns</td>
+</tr>
+<tr>
+<td class="Header">PK</td><td class="Header">Name</td><td class="Header">Data Type</td><td class="Header">NULLs</td><td class="Header">A/N</td><td class="Header">Default</td><td class="Header">Comment</td><td class="Header">FK</td>
+</tr>
+<tr>
+<td class="PkCol">
+<p class="boolImg">
+<img src="../images/pkb16.gif"></p>
+</td><td class="PkCol"><a href="../columns/public_usuarios_idusuario.html">idusuario</a></td><td class="PkCol">BigInt</td><td class="PkCol"> </td><td class="PkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td class="PkCol">nextval('usuarios_idusuario_seq'::regclass)</td><td class="PkCol">Id de la Tabla</td><td class="PkCol"> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_activo.html">activo</a></td><td>Boolean</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Este campo indica que el usuario puede iniciar session</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_apellido.html">apellido</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Apellido del Usuario</td><td> </td>
+</tr>
+<tr>
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/public_usuarios_idcargousuario.html">idcargousuario</a></td><td class="FkCol">BigInt</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Cargo del Usuario</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_cedula.html">cedula</a></td><td>Integer</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>N&uacute;mero de C&eacute;dula de Entidad</td><td> </td>
+</tr>
+<tr>
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/public_usuarios_iddepartamento.html">iddepartamento</a></td><td class="FkCol">BigInt</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Direcci&oacute;n a la que pertenece el usuario</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_nombre.html">nombre</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Nombre del Usuario</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_password.html">password</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Password de inicio de session del usuario</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_ultimologin.html">ultimologin</a></td><td>TimeStamp</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Ultima fecha de acceso del usuario</td><td> </td>
+</tr>
+<tr>
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/public_usuarios_idtipousuario.html">idtipousuario</a></td><td class="FkCol">BigInt</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Tipo de Usuario</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_extension.html">extension</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Extenci&oacute;n telefonica</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_email.html">email</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Correo electronico del Usuario</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_piso.html">piso</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Piso de ubicaci&oacute;n</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_telefono.html">telefono</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Telefono del Usuario</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_sexo.html">sexo</a></td><td>Char(1)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Sexo del Usuario</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_usuarios_fechadenacimiento.html">fechadenacimiento</a></td><td>Date</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Fecha de nacimiento del usuario</td><td> </td>
+</tr>
+<tr>
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/public_usuarios_idunidad.html">idunidad</a></td><td class="FkCol">Integer</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Unidad Estadal a la que pertenece el usuario</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="5">Indexes</td>
+</tr>
+<tr>
+<td class="Header">Name</td><td class="Header">Table</td><td class="Header">Columns</td><td class="Header">Unique</td><td class="Header">Clustered</td>
+</tr>
+<tr>
+<td><a href="../indexes/public_usuarios_uq_usuarios_1.html">uq_usuarios_1</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td>cedula</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="5">Foreign Keys</td>
+</tr>
+<tr>
+<td class="header">Name</td><td class="header">Parent Table</td><td class="header">Child Table</td><td class="header">Parent Columns</td><td class="header">Child Columns</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_usuarios_fk_usuarios_4.html">fk_usuarios_4</a></td><td><a href="../tables/public_unidadesestadales.html">unidadesestadales</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td>idunidad</td><td>idunidad</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_usuarios_idcargousuario.html">idcargousuario</a></td><td><a href="../tables/public_cargosdeusuarios.html">cargosdeusuarios</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td>idcargosusuario</td><td>idcargousuario</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_usuarios_iddepartamento.html">iddepartamento</a></td><td><a href="../tables/public_departamentos.html">departamentos</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td>iddepartamento</td><td>iddepartamento</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_usuarios_idtipousuario.html">idtipousuario</a></td><td><a href="../tables/public_tiposdeusuarios.html">tiposdeusuarios</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td>idtipousuario</td><td>idtipousuario</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="5">Parent Relations</td>
+</tr>
+<tr>
+<td class="header">Name</td><td class="header">Parent Table</td><td class="header">Child Table</td><td class="header">Parent Columns</td><td class="header">Child Columns</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_asignacion_analista_fkf75392c649393dd4.html">fkf75392c649393dd4</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td><a href="../tables/public_asignacion_analista.html">asignacion_analista</a></td><td>idusuario</td><td>idusuario</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_asignacionesderequerimientos_fk_asignacionesderequerimientos_2.html">fk_asignacionesderequerimientos_2</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td><a href="../tables/public_asignacionesderequerimientos.html">asignacionesderequerimientos</a></td><td>idusuario</td><td>idusuarioasigno</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_equipos_idusuario1.html">idusuario1</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td><a href="../tables/public_equipos.html">equipos</a></td><td>idusuario</td><td>idusuario</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_primerlogin_fk_primerlogin_1.html">fk_primerlogin_1</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td><a href="../tables/public_primerlogin.html">primerlogin</a></td><td>idusuario</td><td>idusuario</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_privilegios_fk_privilegios_2.html">fk_privilegios_2</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td><a href="../tables/public_privilegios.html">privilegios</a></td><td>idusuario</td><td>idusuario</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_requerimientos_fk_requerimientos_3.html">fk_requerimientos_3</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td><a href="../tables/public_requerimientos.html">requerimientos</a></td><td>idusuario</td><td>idusuario</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_seguimientousuario_fk_seguimientousuario_2.html">fk_seguimientousuario_2</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td><a href="../tables/public_seguimientousuario.html">seguimientousuario</a></td><td>idusuario</td><td>idusuario</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_solicitudesdeadiestramientos_idusuario.html">idusuario</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td><a href="../tables/public_solicitudesdeadiestramientos.html">solicitudesdeadiestramientos</a></td><td>idusuario</td><td>idusuario</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="8">Triggers</td>
+</tr>
+<tr>
+<td class="Header">Name</td><td class="Header">Table</td><td class="Header">On Delete</td><td class="Header">On Insert</td><td class="Header">On Update</td><td class="Header">Execute</td><td class="Header">For Each</td><td class="Header">SQL</td>
+</tr>
+<tr>
+<td><a href="../triggers/public_usuarios_insertprerencias.html">insertprerencias</a></td><td><a href="../tables/public_usuarios.html">usuarios</a></td><td> </td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td>BEFORE</td><td>FOR EACH ROW</td><td>insertprerencias()</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="1">Used in Diagrams</td>
+</tr>
+<tr>
+<td class="Header">Diagram Name</td>
+</tr>
+<tr>
+<td><a href="../diagrams/helpdesk.html">helpdesk</a></td>
+</tr>
+</table>
+</Body>
+</HTML>

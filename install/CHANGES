@@ -1,0 +1,15 @@
+SISTEMA DE HELPDESK VERSION 1.1
+
+Mejoras de la interfaz de seguimiento
+Ventana de alerta de los requerimientos, pendientes, nuevos y por asignar
+Búsqueda de preventivos correstivos por coordinación, analista, y direcciones, con graficos de los resultados y pdf generado para la impresion.
+Notas de seguimiento.
+Boton de aprobación de los requerimientos.
+Lista de sugerencias.
+Registro del primer login de usuario.
+
+
+SISTEMA DE HELPDESK VERSION 1.2
+Restricciones de accesos de los usuario, así como filtrado de privilegios con ayuda del sistema general de usuarios.
+Mejoras en el registro de requerimientos telefonicos.
+Nuevos colores del contenido

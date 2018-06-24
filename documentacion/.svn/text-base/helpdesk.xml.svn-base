@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Db flnm="helpdesk" nm="helpdesk" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>/media/YEYO/ER</DocFolder>
+  <Sch Cm="Standard public schema" nm="public">
+    <Tbl UsSo="1" nm="asignacion_analista">
+      <Cm>Esta tabla representa los analistas que fueron asignado a los requerimientos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idau" nm="asignacion_analista_pkey"/>
+      <Cl au="1" df="nextval('asignacion_analista_idau_seq'::regclass)" nm="idau" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idasignacion" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de asignación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Analista al cual se asigno el requerimiento</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fkf75392c649393dd4" prLkCl="idusuario">
+        <PrTb mn="0" nm="usuarios" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="asignacion_analista" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <Fk deAc="3" nm="fkf75392c6db18c653" prLkCl="idasignacion">
+        <PrTb mn="0" nm="asignacionesderequerimientos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="asignacion_analista" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idasignacion" prCl="idasignacion"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="asignacionesderequerimientos">
+      <Cm>Esta tabla representa la asignación de los requerimientos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idasignacion" nm="asignacionesderequerimientos_pkey"/>
+      <Cl au="1" df="nextval('asignacionesderequerimientos_idasignacion_seq'::regclass)" nm="idasignacion" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechaasignacion" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha de asignación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idrequerimiento" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id del requerimiento asignado</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="reasignacionid" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la asignación nueva</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechadeatencion" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha en la que se atendio el requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="reasignada" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica si el requerimiento fue reasignado</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="notareasignacion" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Texto que describe el porque de la reasignación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuarioasigno" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Usuario que realizó la asignación</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_asignacionesderequerimientos_2" prLkCl="idusuario">
+        <PrTb mn="0" nm="usuarios" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="asignacionesderequerimientos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idusuarioasigno" prCl="idusuario"/>
+      </Fk>
+      <Fk deAc="3" nm="idrequerimiento0" prLkCl="idrequerimiento">
+        <PrTb mn="0" nm="requerimientos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="asignacionesderequerimientos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idrequerimiento" prCl="idrequerimiento"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="cargosdeusuarios">
+      <Cm>Esta tabla representa los diferentes cargos de los empleados</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idcargosusuario" nm="cargosdeusuarios_pkey"/>
+      <Cl au="1" df="nextval('cargosdeusuarios_idcargosusuario_seq'::regclass)" nm="idcargosusuario" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="cargo" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Texto que describe el cargo</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="configuracionesdeequipos">
+      <Cm>Esta tabla representa las configuraciones de los equipos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idconfiguracion" nm="configuracionesdeequipos_pkey"/>
+      <Cl au="1" df="nextval('configuracionesdeequipos_idconfiguracion_seq'::regclass)" nm="idconfiguracion" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="cdrom" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Descripción del CD-ROM del equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="discoduro" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Descripción del disco duro del equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="floppy" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Descripción del floppy del equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="memoriaram" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Descripción o Cantidad de la Memoria Ram</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="sistemaoperativo" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Descripción de los sistemas operativos instalados en el equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idequipo" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de Equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="direccionip" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Dirección ip del equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombremaquina" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre del Equipo</Cm>
+      </Cl>
+      <Fk deAc="3" nm="idequipo1" prLkCl="idequipo">
+        <PrTb mn="0" nm="equipos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="configuracionesdeequipos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idequipo" prCl="idequipo"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="departamentos">
+      <Cm>Esta tabla representa las direcciones o departamentos internos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="iddepartamento" nm="departamentos_pkey"/>
+      <Cl au="1" df="nextval('departamentos_iddepartamento_seq'::regclass)" nm="iddepartamento" nu="0">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>ID de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="apellidodirector" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Apellido del Director del departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idpadre" nu="1">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica el departamento al cual pertenece este departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="iniciales" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Iniciales del departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre del departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombredirector" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre del director del departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idtipodepartamento" nu="1">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Tipo de departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="piso" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Piso donde queda ubicado el departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="cargodirector" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+      </Cl>
+      <Fk deAc="3" nm="idtipodepartamento" prLkCl="idtipodepartamento">
+        <PrTb mn="0" nm="tiposdepartamentos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="departamentos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idtipodepartamento" prCl="idtipodepartamento"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="equipos">
+      <Cm>Esta tabla representa los equipos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idequipo" nm="equipos_pkey"/>
+      <Cl au="1" df="nextval('equipos_idequipo_seq'::regclass)" nm="idequipo" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="asignado" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica si el equipo está asignado</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="bien" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Número de Bien</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idmodeloequipo" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+      </Cl>
+      <Cl au="0" df="" nm="serial" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Número de serial del Equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idtipoequipo" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Tipo de equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idubicacionequipo" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de Ubicación del Equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Usuario que tiene asignado el Equipo</Cm>
+      </Cl>
+      <Fk deAc="3" nm="idmodeloequipo" prLkCl="idmodeloequipo">
+        <PrTb mn="0" nm="modelosdelosequipos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="equipos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idmodeloequipo" prCl="idmodeloequipo"/>
+      </Fk>
+      <Fk deAc="3" nm="idtipoequipo" prLkCl="idtipoequipo">
+        <PrTb mn="0" nm="tiposdeequipos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="equipos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idtipoequipo" prCl="idtipoequipo"/>
+      </Fk>
+      <Fk deAc="3" nm="idubicacionequipo" prLkCl="idubicacionequipo">
+        <PrTb mn="0" nm="ubicacionesdeequipos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="equipos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idubicacionequipo" prCl="idubicacionequipo"/>
+      </Fk>
+      <Fk deAc="3" nm="idusuario1" prLkCl="idusuario">
+        <PrTb mn="0" nm="usuarios" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="equipos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="marcasdeequipos">
+      <Cm>Esta tabla representa las diferentes marcas de equipos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idmarcaequipo" nm="marcasdeequipos_pkey"/>
+      <Cl au="1" df="nextval('marcasdeequipos_idmarcaequipo_seq'::regclass)" nm="idmarcaequipo" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Descripción de la marca</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombremarca" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Texto que describe la marca</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="telefono" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Telefono de Contato de la marca</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="web" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Sitio Web de la marca</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="email" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Correo electronico de la marca</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="modelosdelosequipos">
+      <Cm>Esta tabla representa los diferentes modelos de los equipos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idmodeloequipo" nm="modelosdelosequipos_pkey"/>
+      <Cl au="1" df="nextval('modelosdelosequipos_idmodeloequipo_seq'::regclass)" nm="idmodeloequipo" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="modelo" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre del Modelo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idmarcaequipo" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Marca</Cm>
+      </Cl>
+      <Fk deAc="3" nm="idmarcaequipo" prLkCl="idmarcaequipo">
+        <PrTb mn="0" nm="marcasdeequipos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="modelosdelosequipos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idmarcaequipo" prCl="idmarcaequipo"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="opciones">
+      <Cm>Esta tabla representa las diferentes opciones de los sistemas</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idopcion" nm="opciones_pkey"/>
+      <Cl au="1" df="nextval('opciones_idopcion_seq'::regclass)" nm="idopcion" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idsistema" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id del Sistema</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombreopcion" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre de la opción</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="opcionactiva" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica que opción esta disponible o no</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_opciones_1" prLkCl="idsistema">
+        <PrTb mn="0" nm="sistemas" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="opciones" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idsistema" prCl="idsistema"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="preferencias">
+      <Cm>Esta tabla guarda las preferencias de los usuarios</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idpreferencia" nm="preferencias_pkey"/>
+      <Cl au="1" df="nextval('preferencias_idpreferencia_seq'::regclass)" nm="idpreferencia" nu="0">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="languaje" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Idioma del sistema</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="theme" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Skin del sistema</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="maxfile" nu="1">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Numero de Filas a mostrar en las consultas</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de Usuario</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="primerlogin">
+      <Cm>Esta tabla guarda los inicios de session por día de los analistas</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idprimerlogin" nm="primerlogin_pkey"/>
+      <Cl au="1" df="nextval('primerlogin_idprimerlogin_seq'::regclass)" nm="idprimerlogin" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id del Usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechalogin" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha de Inicio de Session</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="ipmaquina" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Ip del equipo donde inicio session</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_primerlogin_1" prLkCl="idusuario">
+        <PrTb mn="0" nm="usuarios" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="primerlogin" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="privilegios">
+      <Cm>Esta tabla guarda los privilegios de los usuarios</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idprivilegio" nm="privilegios_pkey"/>
+      <Cl au="1" df="nextval('privilegios_idprivilegio_seq'::regclass)" nm="idprivilegio" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="false" nm="lectura" nu="0">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica que el usuario tiene permisos de lectura</Cm>
+      </Cl>
+      <Cl au="0" df="false" nm="escritura" nu="0">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica que el usuario tiene permisos de escritura</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idsubopcion" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Opción a la que se le otorgo los privilegios</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Usuario al cual se le otorgo los privilegios</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_privilegios_1" prLkCl="idsubopcion">
+        <PrTb mn="0" nm="subopciones" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="privilegios" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idsubopcion" prCl="idsubopcion"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_privilegios_2" prLkCl="idusuario">
+        <PrTb mn="0" nm="usuarios" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="privilegios" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="requerimientos">
+      <Cm>Esta tabla representa los requerimientos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idrequerimiento" nm="requerimientos_pkey"/>
+      <Cl au="1" df="nextval('requerimientos_idrequerimiento_seq'::regclass)" nm="idrequerimiento" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="asunto" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Descripción del requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Estatus del requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechacreacion" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha de creación del requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="diagnostico" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Diagnostico indicado por el analista</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechadiagnostico" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha en la que realizó el diagnostico</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="revisado" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Indica que el analista revisó el requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="origen" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+      </Cl>
+      <Cl au="0" df="" nm="prioridad" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Este campo indica la prioridad del requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="mantenimiento" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Este campo indica el tipo de matenimento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="observacion" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Observaciones</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="asignado" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica que el requerimiento fue asignado</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id del Usuario que solicito el requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idtiposdetallados" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Tipo detallado del requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idtiporequerimiento" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Tipo de requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="aprobado" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica que el requerimiento fue aprobado por el usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tipoderegistro" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Este campo describe el medio por donde se registro el requerimiento</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_requerimientos_2" prLkCl="idtiposdetallados">
+        <PrTb mn="0" nm="tiposdetallados" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="requerimientos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idtiposdetallados" prCl="idtiposdetallados"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_requerimientos_3" prLkCl="idusuario">
+        <PrTb mn="0" nm="usuarios" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="requerimientos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_requerimientos_9" prLkCl="idtiporequerimiento">
+        <PrTb mn="0" nm="tiposderequerimientos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="requerimientos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idtiporequerimiento" prCl="idtiporequerimiento"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="requerimientosanulados">
+      <Cm>Esta tabla guarda las notas de anulaciones de los requerimientos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idrequerimientoanulado" nm="requerimientosanulados_pkey"/>
+      <Cl au="1" df="nextval('requerimientosanulados_idrequerimientoanulado_seq'::regclass)" nm="idrequerimientoanulado" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nota" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Texto que describe el porque de la anulación del requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idrequerimiento" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Requerimiento anulado</Cm>
+      </Cl>
+      <Fk deAc="3" nm="idrequerimiento1" prLkCl="idrequerimiento">
+        <PrTb mn="0" nm="requerimientos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="requerimientosanulados" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idrequerimiento" prCl="idrequerimiento"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="requerimientosbloqueados">
+      <Cm>Esta tabla guarda los requerimientos que han sido bloqueados por no tener una solución inmediata</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idrequerimientobloqueado" nm="requerimientosbloqueados_pkey"/>
+      <Cl au="1" df="nextval('requerimientosbloqueados_idrequerimientobloqueado_seq'::regclass)" nm="idrequerimientobloqueado" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechabloqueo" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha en la que se realizó el bloqueo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechadesbloqueo" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha en la que se desbloqueo el requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nota" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Texto que indica el porque del bloqueo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idrequerimiento" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Requerimiento que fue bloqueado</Cm>
+      </Cl>
+      <Fk deAc="3" nm="idrequerimiento2" prLkCl="idrequerimiento">
+        <PrTb mn="0" nm="requerimientos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="requerimientosbloqueados" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idrequerimiento" prCl="idrequerimiento"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="seguimientousuario">
+      <Cm>Esta tabla representa las notas de seguimiento realizadas por los usuarios</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idseguimiento" nm="seguimientousuario_pkey"/>
+      <Cl au="1" df="nextval('seguimientousuario_idseguimiento_seq'::regclass)" nm="idseguimiento" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="notadeseguimiento" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Texto que describe las notas de seguimientos realizada por los usuarios</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idrequerimiento" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Requerimiento al cual se le realizó el seguimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Usuario que creó la nota de seguimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechadeseguimiento" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha de creación del seguimiento</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_seguimientousuario_1" prLkCl="idrequerimiento">
+        <PrTb mn="0" nm="requerimientos" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="seguimientousuario" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idrequerimiento" prCl="idrequerimiento"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_seguimientousuario_2" prLkCl="idusuario">
+        <PrTb mn="0" nm="usuarios" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="seguimientousuario" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="sessions">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idsession" nm="pk_idsession"/>
+      <Cl au="1" df="nextval('sessions_idsession_seq'::regclass)" nm="idsession" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+      </Cl>
+      <Cl au="0" df="" nm="session_key" nu="0">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+      </Cl>
+      <Cl au="0" df="now()" nm="fechacreacion" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+      </Cl>
+      <Cl au="0" df="" nm="fechaexpiracion" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="sistemas">
+      <Cm>Esta tabla representa los sistemas</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idsistema" nm="sistemas_pkey"/>
+      <Cl au="1" df="nextval('sistemas_idsistema_seq'::regclass)" nm="idsistema" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombresistema" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre del Sistema</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="analista" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Programador que realizo el sistema</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Descripción del sistema</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechadepublicacion" nu="1">
+        <DT ds="Date" en="" id="91" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha de publicación del sistema</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="version" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Versión del sistema</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="solicitudesdeadiestramientos">
+      <Cm>Esta tabla representa las solicitudes de adiestramiento</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idsolicitudadiestramiento" nm="solicitudesdeadiestramientos_pkey"/>
+      <Cl au="1" df="nextval('solicitudesdeadiestramientos_idsolicitudadiestramiento_seq'::regclass)" nm="idsolicitudadiestramiento" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idrequerimiento" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de Requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="resuelto" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica si se realizó el adiestramiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Usuario que solicito el adiestramiento</Cm>
+      </Cl>
+      <Fk deAc="3" nm="idrequerimiento" prLkCl="idrequerimiento">
+        <PrTb mn="0" nm="requerimientos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="solicitudesdeadiestramientos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idrequerimiento" prCl="idrequerimiento"/>
+      </Fk>
+      <Fk deAc="3" nm="idusuario" prLkCl="idusuario">
+        <PrTb mn="0" nm="usuarios" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="solicitudesdeadiestramientos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="solucionesderequerimientos">
+      <Cm>Esta tabla guarda las soluciones de los requerimientos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idsolucion" nm="solucionesderequerimientos_pkey"/>
+      <Cl au="1" df="nextval('solucionesderequerimientos_idsolucion_seq'::regclass)" nm="idsolucion" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idasignacion" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Asignación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechasolucion" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha de solución</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="solucion" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Texto que describe la solución</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nivel" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nivel de la solución</Cm>
+      </Cl>
+      <Fk deAc="3" nm="idasignacion" prLkCl="idasignacion">
+        <PrTb mn="0" nm="asignacionesderequerimientos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="solucionesderequerimientos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idasignacion" prCl="idasignacion"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="subopciones">
+      <Cm>Esta tabla representa las diferentes subopciones de los sistemas</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idsubopcion" nm="subopciones_pkey"/>
+      <Cl au="1" df="nextval('subopciones_idsubopcion_seq'::regclass)" nm="idsubopcion" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idopcion" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la opción</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombresubopcion" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre de la subopción</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="subopcionactiva" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica que subopción esta disponible o no</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="pordefecto" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica que la subopción es una opción por defecto</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_subopciones_1" prLkCl="idopcion">
+        <PrTb mn="0" nm="opciones" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="subopciones" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idopcion" prCl="idopcion"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="sugerencias">
+      <Cm>Esta tabla representa las sugerencias realizadas por los usuarios</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idsugerencia" nm="sugerencias_pkey"/>
+      <Cl au="1" df="nextval('sugerencias_idsugerencia_seq'::regclass)" nm="idsugerencia" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="sugerencia" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Texto que describe la sugerencia</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre del Usuario que realizó la sugerencia</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fecha" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha en la que se creó la sugerencia</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tiposdeequipos">
+      <Cm>Esta tabla representa los diferentes tipos de equipos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idtipoequipo" nm="tiposdeequipos_pkey"/>
+      <Cl au="1" df="nextval('tiposdeequipos_idtipoequipo_seq'::regclass)" nm="idtipoequipo" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tipodeequipo" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Tipo de Equipo</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tiposdepartamentos">
+      <Cm>Esta tabla representa los tipos de direcciones ó departamentos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idtipodepartamento" nm="tiposdepartamentos_pkey"/>
+      <Cl au="1" df="nextval('tiposdepartamentos_idtipodepartamento_seq'::regclass)" nm="idtipodepartamento" nu="0">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tipo" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Texto que describe el Tipo de Departamento</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tiposderequerimientos">
+      <Cm>Esta tabla representa los tipos de requerimientos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idtiporequerimiento" nm="tiposderequerimientos_pkey"/>
+      <Cl au="1" df="nextval('tiposderequerimientos_idtiporequerimiento_seq'::regclass)" nm="idtiporequerimiento" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tipoderequerimiento" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Tipo de Requerimiento</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tiposdetallados">
+      <Cm>Este tabla representa los tipos detallados de los requerimientos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idtiposdetallados" nm="tiposdetallados_pkey"/>
+      <Cl au="1" df="nextval('tiposdetallados_idtiposdetallados_seq'::regclass)" nm="idtiposdetallados" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tiposdetallados" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="1024" sc="null" sg="1"/>
+        <Cm>Tipo detallado del requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idtiposgenerales" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Tipo general del requerimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idtiporequerimiento" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Tipo de requerimiento</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_tiposdetallados_1" prLkCl="idtiposgenerales">
+        <PrTb mn="0" nm="tiposgenerales" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="tiposdetallados" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idtiposgenerales" prCl="idtiposgenerales"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_tiposdetallados_2" prLkCl="idtiporequerimiento">
+        <PrTb mn="0" nm="tiposderequerimientos" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="tiposdetallados" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idtiporequerimiento" prCl="idtiporequerimiento"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tiposdeusuarios">
+      <Cm>Esta tabla representa los tipos de usuarios de los sistemas</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idtipousuario" nm="tiposdeusuarios_pkey"/>
+      <Cl au="1" df="nextval('tiposdeusuarios_idtipousuario_seq'::regclass)" nm="idtipousuario" nu="0">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tipodeusuario" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Tipo de Usuario</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tiposgenerales">
+      <Cm>Este tabla representa los tipos generales de requerimientos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idtiposgenerales" nm="tiposgenerales_pkey"/>
+      <Cl au="1" df="nextval('tiposgenerales_idtiposgenerales_seq'::regclass)" nm="idtiposgenerales" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tiposgenerales" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Tipo general del requerimiento</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="ubicacionesdeequipos">
+      <Cm>Esta tabla representa la ubicación fisica de los equipos</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idubicacionequipo" nm="ubicacionesdeequipos_pkey"/>
+      <Cl au="1" df="nextval('ubicacionesdeequipos_idubicacionequipo_seq'::regclass)" nm="idubicacionequipo" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="iddepartamento" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Departamento al cual se asignó el equipo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT ds="Text" en="" id="703" ln="null" sc="null" sg="1"/>
+        <Cm>Descripción de la ubicación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="piso" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Piso donde se encuentra el equipo</Cm>
+      </Cl>
+      <Fk deAc="3" nm="iddepartamento1" prLkCl="iddepartamento">
+        <PrTb mn="0" nm="departamentos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="ubicacionesdeequipos" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="iddepartamento" prCl="iddepartamento"/>
+      </Fk>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="unidadesestadales">
+      <Cm>Esta tabla representa las unidades estadales</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idunidad" nm="unidadesestadales_pkey"/>
+      <Cl au="1" df="nextval('unidadesestadales_idunidad_seq'::regclass)" nm="idunidad" nu="0">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="unidadestadal" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Unidad Estadal</Cm>
+      </Cl>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="usuarios">
+      <Cm>Esta tabla representa los Usuarios del sistema</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idusuario" nm="usuarios_pkey"/>
+      <Cl au="1" df="nextval('usuarios_idusuario_seq'::regclass)" nm="idusuario" nu="0">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Id de la Tabla</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="activo" nu="1">
+        <DT ds="Boolean" en="" id="16" ln="null" sc="null" sg="1"/>
+        <Cm>Este campo indica que el usuario puede iniciar session</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="apellido" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Apellido del Usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idcargousuario" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Cargo del Usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="cedula" nu="1">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Número de Cédula de Entidad</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="iddepartamento" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Dirección a la que pertenece el usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Nombre del Usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="password" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Password de inicio de session del usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="ultimologin" nu="1">
+        <DT ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1"/>
+        <Cm>Ultima fecha de acceso del usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idtipousuario" nu="1">
+        <DT ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1"/>
+        <Cm>Tipo de Usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="extension" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Extención telefonica</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="email" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Correo electronico del Usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="piso" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Piso de ubicación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="telefono" nu="1">
+        <DT ds="VarChar" en="" id="12" ln="255" sc="null" sg="1"/>
+        <Cm>Telefono del Usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="sexo" nu="1">
+        <DT ds="Char" en="" id="1" ln="1" sc="null" sg="1"/>
+        <Cm>Sexo del Usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="fechadenacimiento" nu="1">
+        <DT ds="Date" en="" id="91" ln="null" sc="null" sg="1"/>
+        <Cm>Fecha de nacimiento del usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idunidad" nu="1">
+        <DT ds="Integer" en="" id="4" ln="null" sc="null" sg="1"/>
+        <Cm>Unidad Estadal a la que pertenece el usuario</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_usuarios_4" prLkCl="idunidad">
+        <PrTb mn="0" nm="unidadesestadales" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="usuarios" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idunidad" prCl="idunidad"/>
+      </Fk>
+      <Fk deAc="3" nm="idcargousuario" prLkCl="idcargosusuario">
+        <PrTb mn="0" nm="cargosdeusuarios" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="usuarios" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idcargousuario" prCl="idcargosusuario"/>
+      </Fk>
+      <Fk deAc="3" nm="iddepartamento" prLkCl="iddepartamento">
+        <PrTb mn="0" nm="departamentos" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="usuarios" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="iddepartamento" prCl="iddepartamento"/>
+      </Fk>
+      <Fk deAc="3" nm="idtipousuario" prLkCl="idtipousuario">
+        <PrTb mn="0" nm="tiposdeusuarios" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="usuarios" oe="1" sch="public" zr="1"/>
+        <ClPr cdCl="idtipousuario" prCl="idtipousuario"/>
+      </Fk>
+      <Idx clu="0" nm="uq_usuarios_1" unq="1">
+        <ClNs>cedula</ClNs>
+      </Idx>
+      <Trg del="0" eaRow="1" exBe="1" ins="1" nm="insertprerencias" upd="0">
+        <Sql>insertprerencias()</Sql>
+      </Trg>
+      <SchTrHis/>
+    </Tbl>
+    <Proc nm="insertprerencias()">
+      <src>CREATE FUNCTION insertprerencias() 
+ RETURNS Trigger AS 
+$BODY$ BEGIN
+        IF NEW.idusuario ISNULL THEN
+            RAISE EXCEPTION 'El id de usuario esta nulo';
+        END IF;
+        INSERT INTO preferencias (languaje,theme, maxfile, idusuario) VALUES ('ES', 'Azul', 10, NEW.idusuario);
+        RETURN NEW;
+    END;
+$BODY$
+ LANGUAGE 'plpgsql' VOLATILE;</src>
+    </Proc>
+    <Seq incr="1" nm="asignacion_analista_idau_seq"/>
+    <Seq incr="1" nm="asignacionesderequerimientos_idasignacion_seq"/>
+    <Seq incr="1" nm="cargosdeusuarios_idcargosusuario_seq"/>
+    <Seq incr="1" nm="configuracionesdeequipos_idconfiguracion_seq"/>
+    <Seq incr="1" nm="departamentos_iddepartamento_seq"/>
+    <Seq incr="1" nm="equipos_idequipo_seq"/>
+    <Seq incr="1" nm="marcasdeequipos_idmarcaequipo_seq"/>
+    <Seq incr="1" nm="modelosdelosequipos_idmodeloequipo_seq"/>
+    <Seq incr="1" nm="opciones_idopcion_seq"/>
+    <Seq incr="1" nm="preferencias_idpreferencia_seq"/>
+    <Seq incr="1" nm="primerlogin_idprimerlogin_seq"/>
+    <Seq incr="1" nm="privilegios_idprivilegio_seq"/>
+    <Seq incr="1" nm="requerimientos_idrequerimiento_seq"/>
+    <Seq incr="1" nm="requerimientosanulados_idrequerimientoanulado_seq"/>
+    <Seq incr="1" nm="requerimientosbloqueados_idrequerimientobloqueado_seq"/>
+    <Seq incr="1" nm="seguimientousuario_idseguimiento_seq"/>
+    <Seq incr="1" nm="sessions_idsession_seq"/>
+    <Seq incr="1" nm="sistemas_idsistema_seq"/>
+    <Seq incr="1" nm="solicitudesdeadiestramientos_idsolicitudadiestramiento_seq"/>
+    <Seq incr="1" nm="solucionesderequerimientos_idsolucion_seq"/>
+    <Seq incr="1" nm="subopciones_idsubopcion_seq"/>
+    <Seq incr="1" nm="sugerencias_idsugerencia_seq"/>
+    <Seq incr="1" nm="tiposdeequipos_idtipoequipo_seq"/>
+    <Seq incr="1" nm="tiposdepartamentos_idtipodepartamento_seq"/>
+    <Seq incr="1" nm="tiposderequerimientos_idtiporequerimiento_seq"/>
+    <Seq incr="1" nm="tiposdetallados_idtiposdetallados_seq"/>
+    <Seq incr="1" nm="tiposdeusuarios_idtipousuario_seq"/>
+    <Seq incr="1" nm="tiposgenerales_idtiposgenerales_seq"/>
+    <Seq incr="1" nm="ubicacionesdeequipos_idubicacionequipo_seq"/>
+    <Seq incr="1" nm="unidadesestadales_idunidad_seq"/>
+    <Seq incr="1" nm="usuarios_idusuario_seq"/>
+  </Sch>
+  <Dgm nm="helpdesk">
+    <RnCf FtSz="9" lkStgy="OffsetDirect" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="0"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="1"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="1"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="1"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="asignacion_analista" x="1140" y="453"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="asignacionesderequerimientos" x="975" y="289"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="cargosdeusuarios" x="1182" y="546"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="configuracionesdeequipos" x="1358" y="830"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="departamentos" x="681" y="1101"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="equipos" x="982" y="1026"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="marcasdeequipos" x="1678" y="939"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="modelosdelosequipos" x="1466" y="1131"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="opciones" x="160" y="1129"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="preferencias" x="1470" y="609"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="primerlogin" x="1162" y="650"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="privilegios" x="545" y="965"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="requerimientos" x="681" y="365"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="requerimientosanulados" x="818" y="129"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="requerimientosbloqueados" x="489" y="125"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="seguimientousuario" x="209" y="772"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="sessions" x="1274" y="1317"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="sistemas" x="169" y="1301"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="solicitudesdeadiestramientos" x="479" y="701"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="solucionesderequerimientos" x="1278" y="278"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="subopciones" x="178" y="965"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="sugerencias" x="1550" y="1322"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="tiposdeequipos" x="1369" y="990"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="tiposdepartamentos" x="517" y="1321"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="tiposderequerimientos" x="311" y="575"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="tiposdetallados" x="279" y="340"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="tiposdeusuarios" x="1314" y="781"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="tiposgenerales" x="70" y="530"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="ubicacionesdeequipos" x="966" y="1325"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="unidadesestadales" x="381" y="898"/>
+    <TbGl bkCl="ffffffe6" sch="public" tbl="usuarios" x="749" y="661"/>
+    <FkGl bkCl="ff000000" nm="public.asignacion_analista.fkf75392c649393dd4"/>
+    <FkGl bkCl="ff000000" nm="public.asignacion_analista.fkf75392c6db18c653"/>
+    <FkGl bkCl="ff000000" nm="public.asignacionesderequerimientos.fk_asignacionesderequerimientos_2"/>
+    <FkGl bkCl="ff000000" nm="public.asignacionesderequerimientos.idrequerimiento0"/>
+    <FkGl bkCl="ff000000" nm="public.configuracionesdeequipos.idequipo1"/>
+    <FkGl bkCl="ff000000" nm="public.departamentos.idtipodepartamento"/>
+    <FkGl bkCl="ff000000" nm="public.equipos.idmodeloequipo"/>
+    <FkGl bkCl="ff000000" nm="public.equipos.idtipoequipo"/>
+    <FkGl bkCl="ff000000" nm="public.equipos.idubicacionequipo"/>
+    <FkGl bkCl="ff000000" nm="public.equipos.idusuario1"/>
+    <FkGl bkCl="ff000000" nm="public.modelosdelosequipos.idmarcaequipo"/>
+    <FkGl bkCl="ff000000" nm="public.opciones.fk_opciones_1"/>
+    <FkGl bkCl="ff000000" nm="public.primerlogin.fk_primerlogin_1"/>
+    <FkGl bkCl="ff000000" nm="public.privilegios.fk_privilegios_1"/>
+    <FkGl bkCl="ff000000" nm="public.privilegios.fk_privilegios_2"/>
+    <FkGl bkCl="ff000000" nm="public.requerimientos.fk_requerimientos_2"/>
+    <FkGl bkCl="ff000000" nm="public.requerimientos.fk_requerimientos_3"/>
+    <FkGl bkCl="ff000000" nm="public.requerimientos.fk_requerimientos_9"/>
+    <FkGl bkCl="ff000000" nm="public.requerimientosanulados.idrequerimiento1"/>
+    <FkGl bkCl="ff000000" nm="public.requerimientosbloqueados.idrequerimiento2"/>
+    <FkGl bkCl="ff000000" nm="public.seguimientousuario.fk_seguimientousuario_1"/>
+    <FkGl bkCl="ff000000" nm="public.seguimientousuario.fk_seguimientousuario_2"/>
+    <FkGl bkCl="ff000000" nm="public.solicitudesdeadiestramientos.idrequerimiento"/>
+    <FkGl bkCl="ff000000" nm="public.solicitudesdeadiestramientos.idusuario"/>
+    <FkGl bkCl="ff000000" nm="public.solucionesderequerimientos.idasignacion"/>
+    <FkGl bkCl="ff000000" nm="public.subopciones.fk_subopciones_1"/>
+    <FkGl bkCl="ff000000" nm="public.tiposdetallados.fk_tiposdetallados_1"/>
+    <FkGl bkCl="ff000000" nm="public.tiposdetallados.fk_tiposdetallados_2"/>
+    <FkGl bkCl="ff000000" nm="public.ubicacionesdeequipos.iddepartamento1"/>
+    <FkGl bkCl="ff000000" nm="public.usuarios.fk_usuarios_4"/>
+    <FkGl bkCl="ff000000" nm="public.usuarios.idcargousuario"/>
+    <FkGl bkCl="ff000000" nm="public.usuarios.iddepartamento"/>
+    <FkGl bkCl="ff000000" nm="public.usuarios.idtipousuario"/>
+  </Dgm>
+  <RnmMgr NxRnmId="1"/>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BooleanOption>
+        <Name>doc.diagrams</Name>
+        <Label>Diagrams</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.fks</Name>
+        <Label>Foreign Keys</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.indexes</Name>
+        <Label>Indexes</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.overwrite.css</Name>
+        <Label>Overwrite CSS File</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.procs</Name>
+        <Label>Procedures</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.schemas</Name>
+        <Label>Schemas</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.sequences</Name>
+        <Label>Sequences</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.tables</Name>
+        <Label>Tables</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.triggers</Name>
+        <Label>Triggers</Label>
+        <Value>true</Value>
+      </BooleanOption>
+      <BooleanOption>
+        <Name>doc.views</Name>
+        <Label>Views</Label>
+        <Value>true</Value>
+      </BooleanOption>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+</Db>

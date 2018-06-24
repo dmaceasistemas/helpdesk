@@ -1,0 +1,41 @@
+<!-- Se requieren dos páginas html, fuente y destino -->
+<!-- Copiar en la página html fuente -->
+
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+var nn4 = (document.layers);
+var nn6 = (document.getElementById && !document.all);
+var ie4 = (document.all && !document.getElementById);
+var ie5 = (document.all && document.getElementById);
+function loadPage(id,nestref,url) {
+if (nn4) {
+var lyr = (nestref)? eval('document.'+nestref+'.document.'+id) : document.layers[id]
+lyr.load(url,lyr.clip.width)
+}
+else if(ie4) parent.contentFRM.location = url;
+else if(ie5 || nn6) document.getElementById('contentFRM').src = url;
+}
+function showPage(id) {
+if (ie4) {
+document.all[id].innerHTML = parent.contentFRM.document.body.innerHTML;
+}
+else if(nn6 || ie5) { 
+document.getElementById(id).innerHTML = window.frames['contentFRM'].document.getElementById('theBody').innerHTML;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY onload="parent.showPage('contentLayer')">
+</BODY>
+
+<!-- Copiar en la página html destino -->
+
+<a href="javascript:loadPage('contentLayer',null,'ejemplo.html')">Cargar página html</a>
+<iframe name="contentFRM" id="contentFRM" width="0" height="0" frameborder="0">
+</iframe>
+<div id="contentLayer" style="position:absolute; width:345px; height:115px; z-index:1; left: 186px; top: 304px"></div>

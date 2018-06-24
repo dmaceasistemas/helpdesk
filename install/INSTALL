@@ -1,0 +1,3 @@
+COPIAR EL ARCHIVO helpdesk.conf en la carpeta /etc 
+de su distribución linux favorita, modificar los datos de la conexión a la base de datos y 
+copia la carpeta helpdesk a su directorio web ejemplo /var/www/

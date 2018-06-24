@@ -1,0 +1,148 @@
+<HTML>
+<Header>
+<Title>configuracionesdeequipos - Table</Title>
+<Link href="../css/doc.css" rel="stylesheet" type="text/css">
+</Header>
+<Body>
+<table class="logo">
+<tr>
+<td class="logo">
+<p>DbWrench Documentation: helpdesk</p>
+</td>
+</tr>
+</table>
+<table class="horzMenu">
+<tr>
+<td class="horzMenu"><a class="horzMenu" href="../index.html">Home</a></td><td class="horzMenu"><a class="horzMenu" href="../tables/index.html">Tables</a></td><td class="horzMenu"><a class="horzMenu" href="../schemas/index.html">Schemas</a></td><td class="horzMenu"><a class="horzMenu" href="../diagrams/index.html">Diagrams</a></td><td class="horzMenu"><a class="horzMenu" href="../foreignKeys/index.html">Foreign Keys</a></td><td class="horzMenu"><a class="horzMenu" href="../indexes/index.html">Indexes</a></td><td class="horzMenuFiller"></td>
+</tr>
+</table>
+<hr>
+<table class="pageTitle">
+<tr>
+<td class="pageTitle">
+<p>Table: configuracionesdeequipos</p>
+</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="8">Columns</td>
+</tr>
+<tr>
+<td class="Header">PK</td><td class="Header">Name</td><td class="Header">Data Type</td><td class="Header">NULLs</td><td class="Header">A/N</td><td class="Header">Default</td><td class="Header">Comment</td><td class="Header">FK</td>
+</tr>
+<tr>
+<td class="PkCol">
+<p class="boolImg">
+<img src="../images/pkb16.gif"></p>
+</td><td class="PkCol"><a href="../columns/public_configuracionesdeequipos_idconfiguracion.html">idconfiguracion</a></td><td class="PkCol">BigInt</td><td class="PkCol"> </td><td class="PkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td class="PkCol">nextval('configuracionesdeequipos_idconfiguracion_seq'::regclass)</td><td class="PkCol">Id de la Tabla</td><td class="PkCol"> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_configuracionesdeequipos_cdrom.html">cdrom</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Descripci&oacute;n del CD-ROM del equipo</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_configuracionesdeequipos_discoduro.html">discoduro</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Descripci&oacute;n del disco duro del equipo</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_configuracionesdeequipos_floppy.html">floppy</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Descripci&oacute;n del floppy del equipo</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_configuracionesdeequipos_memoriaram.html">memoriaram</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Descripci&oacute;n o Cantidad de la Memoria Ram</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_configuracionesdeequipos_sistemaoperativo.html">sistemaoperativo</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Descripci&oacute;n de los sistemas operativos instalados en el equipo</td><td> </td>
+</tr>
+<tr>
+<td class="FkCol"> </td><td class="FkCol"><a href="../columns/public_configuracionesdeequipos_idequipo.html">idequipo</a></td><td class="FkCol">BigInt</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td class="FkCol"> </td><td class="FkCol"> </td><td class="FkCol">Id de Equipo</td><td class="FkCol">
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_configuracionesdeequipos_direccionip.html">direccionip</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Direcci&oacute;n ip del equipo</td><td> </td>
+</tr>
+<tr>
+<td> </td><td><a href="../columns/public_configuracionesdeequipos_nombremaquina.html">nombremaquina</a></td><td>VarChar(255)</td><td>
+<p class="boolImg">
+<img src="../images/ok12d.gif"></p>
+</td><td> </td><td> </td><td>Nombre del Equipo</td><td> </td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="5">Indexes</td>
+</tr>
+<tr>
+<td class="Header">Name</td><td class="Header">Table</td><td class="Header">Columns</td><td class="Header">Unique</td><td class="Header">Clustered</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="5">Foreign Keys</td>
+</tr>
+<tr>
+<td class="header">Name</td><td class="header">Parent Table</td><td class="header">Child Table</td><td class="header">Parent Columns</td><td class="header">Child Columns</td>
+</tr>
+<tr>
+<td><a href="../foreignKeys/public_configuracionesdeequipos_idequipo1.html">idequipo1</a></td><td><a href="../tables/public_equipos.html">equipos</a></td><td><a href="../tables/public_configuracionesdeequipos.html">configuracionesdeequipos</a></td><td>idequipo</td><td>idequipo</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="5">Parent Relations</td>
+</tr>
+<tr>
+<td class="header">Name</td><td class="header">Parent Table</td><td class="header">Child Table</td><td class="header">Parent Columns</td><td class="header">Child Columns</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="8">Triggers</td>
+</tr>
+<tr>
+<td class="Header">Name</td><td class="Header">Table</td><td class="Header">On Delete</td><td class="Header">On Insert</td><td class="Header">On Update</td><td class="Header">Execute</td><td class="Header">For Each</td><td class="Header">SQL</td>
+</tr>
+</table>
+<br>
+<table class="flat">
+<tr>
+<td class="banner" colspan="1">Used in Diagrams</td>
+</tr>
+<tr>
+<td class="Header">Diagram Name</td>
+</tr>
+<tr>
+<td><a href="../diagrams/helpdesk.html">helpdesk</a></td>
+</tr>
+</table>
+</Body>
+</HTML>

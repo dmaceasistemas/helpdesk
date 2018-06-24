@@ -1,0 +1,180 @@
+/******************************************************************************
+* Software: Sistema de Helpdesk                                                *
+* Version:  1.0                                                                *
+* Date:     17-03-2006                                                         *
+* Author:   Jose Luis Estevez                                                  *
+* License:                                                                     *
+* Note:     Azul                                                               *
+* Company:  Ministerio de Agriculura y Tierras                                 *
+* Web:      www.mat.gob.ve                                                     *
+*******************************************************************************/
+
+
+#helpdeskmenu{
+   padding: 4px;
+   border-top: 1px solid #cccccc;
+   border-bottom: 2px solid #666666;
+   border-left: 1px solid #cccccc;
+   border-right: 2px solid #666666;
+}
+
+#helpdeskmenu:hover {
+   border-bottom: 1px solid #cccccc;
+   border-top: 2px solid #666666;
+   border-right: 1px solid #cccccc;
+   border-left: 2px solid #666666;
+   background: url("azul2.png");
+   cursor: pointer;
+}
+
+#hdtd{
+	background: url("azul.png");
+}
+
+.paginacion{
+	text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+	color: green;
+}
+
+.paginacion:focus{
+	color: red;	
+}
+
+.paginacion:hover{
+	color: white;	
+}
+
+
+#similares{
+	font-size: 8px;
+	text-align: center;
+	border-color: black;
+	border: solid;
+	border-width: 1px;
+	background: #ffffdf;
+	/*visibility: hidden;*/
+}
+
+body {
+	font: bold 0.7em/ 1.4em arial, helvetica, sans-serif;
+	font-size: 10px;
+}
+
+#version {
+	margin-top: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+    font-size: 9px;
+    color: #BBBBBB;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+#boton1,#boton2,#trigger {
+	background: url("../../images/calendar.gif") no-repeat center;
+	border: 0;
+}
+
+#registrar {
+	font-size: 14px;
+}
+
+#contenido {
+	background-color: #fdffff;
+	border: solid;
+	border-color: black;
+	border-width: 1px;
+}
+
+#cuerpo {
+	background-color: #fffffa;
+}
+
+th {
+	background-color: #ffffff;
+}
+
+input,textarea,select {
+	background-color: #f1f1f1 ; /*tabla azul #f1f1f1*/
+	font-size: 11px;
+}
+
+input:focus,textarea:focus {
+	background-color: #eeedcf; /*tabla azul #eeedcf*/ /*tabla amarilla #eeedcf*/ /*tabla gris #fffade*/
+}
+
+
+
+/*Tablas*/
+H1.title {
+	font-family: sans-serif;
+	color: #99AACC	
+}
+
+P.bodyText {
+	font-family: sans-serif;
+	font-size: 9pt;
+}
+/***********azul****************/
+table.tablas{
+	border: solid;
+	border-color: #99aadd;
+	border-width: 1px;
+	}
+
+TD.tabla-header {
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 9pt;
+	color: white; /* white */ /* black */
+	font-style: italic;
+}
+
+TD.tabla-text {
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 8pt;
+	color: black;
+}
+
+TD.config-log-header {
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 9pt;
+	color: black; /*white*/ /*black*/
+	border-top: 10px solid white;
+}
+
+TR.light-row {
+	background: #000000;
+}
+/***************azul********************/
+TR.dark-row {
+	background: #eeeeff;
+}
+
+TR.dark-row2 {
+	background: #eeeeef;
+	font-weight: bold;
+}
+
+#efecto:hover, #efecto:active {
+	background-color: #fffffc; /*tabla azul #fffffc*/ /*tabla amarilla #ffffaa*/ /*tabla gris #fffffc*/
+	cursor: pointer;
+}
+/***************azul***********************/
+TR.header {
+	background: #99aadd;
+	font-weight: bold;
+	color: white;
+	font-style: italic;
+	text-align: center;
+}

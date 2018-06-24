@@ -1,0 +1,245 @@
+/******************************************************************************
+* Software: Sistema de Helpdesk                                                *
+* Version:  1.0                                                                *
+* Date:     17-03-2006                                                         *
+* Author:   Jose Luis Estevez                                                  *
+* License:                                                                     *
+* Note:                                                                        *
+* Company:  Ministerio de Agriculura y Tierras                                 *
+* Web:      www.mat.gob.ve                                                     *
+*******************************************************************************/
+
+.msg{
+	font-size: 9px;
+	color: #000000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.info{
+	font-size: 9px;
+	color: #000000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.estadisticas{
+	background-color: #000000;
+	border: solid;
+	border-color: #000000;
+	border-width: 1px;
+}
+
+select{
+	font-size: 9px;
+	text-transform: uppercase;
+	}
+
+.texto3 {
+	font-weight: bold;
+	font-size: 15px;
+	color: #000000;
+	font-style: normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.download{
+	text-decoration: none;
+	font-size: 10px;
+	font-weight: bold;
+	color: green;
+}
+
+.download:focus{
+	color: red;	
+}
+
+.download:hover{
+	color: #666666;	
+}
+
+
+.plan{
+	background-color:#f2fff6;
+	border-right:1px solid #d1ffe0;
+	border-top:1px solid #d1ffe0;
+}
+
+#version {
+	display: block;
+	text-align: center;
+	font-size: 10px;
+	color: #BBBBBB;
+	font-style: italic;
+	font-weight: bold;
+}
+
+#contenido {
+	background-color: #FFFFFF;
+	border: solid;
+	border-color: #d1ffe0;
+	border-width: 1px;
+}
+
+.texto11 {
+	font-weight: bold;
+	font-size: 12px;
+	color: #999;
+	font-style: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.texto12 {
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000;
+	font-style: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.texto1 {
+	font-weight: bold;
+	font-size: 10px;
+	color: #999;
+	font-style: normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.texto2 {
+	font-weight: bold;
+	font-size: 10px;
+	color: #000000;
+	font-style: normal;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*margin-right: 5;
+	margin-left: 5;*/
+	margin-top: 0;
+	font-size: 80%;
+	font-weight: bold;
+	background: #FFF;
+}
+
+h2 {
+	font: bold 14px Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+	margin: 0px;
+	padding: 0px 0px 0px 15px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: none;
+}
+
+#menu {
+	width: 150px;
+	margin: 10px;
+}
+
+#menu li a {
+	height: 32px;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	height: 24px;
+	text-decoration: none;
+}
+
+#menu li a:link,#menu li a:visited {
+	color: #765;
+	display: block;
+	background: url(../images/menu13.gif);
+	padding: 0px 0 0 10px;
+	font-family: sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+#menu li a:hover {
+	color: #000;
+	background: url(../images/menu14.gif) 0 -72px;
+	padding: 0px 0 0 10px;
+}
+
+#A4 #nav-A4 a,#A7 #nav-A7 a, #A8 #nav-A8 a, #A9 #nav-A9 a, #A10 #nav-A10 a, #A11 #nav-A11 a, #A12 #nav-A12 a, #A13 #nav-A13 a, #A14 #nav-A14 a
+, #A15 #nav-A15 a, #A19 #nav-A19 a, #A21 #nav-A21 a, #A22 #nav-A22 a, #A24 #nav-A24 a, #A25 #nav-A25 a, #A26 #nav-A26 a, #A27 #nav-A27 a{
+	color:#000;
+	background: url(../images/menu15.gif) 0 -72px;
+	padding: 0px 0 0 10px;
+}
+
+
+
+
+
+
+/*********/
+#tabs {
+	float: left;
+	width: 100%;
+	background: #f2fff6;/***/
+	font-size: 55%;
+	font-weight: bold;
+	line-height: normal;
+	border-bottom: 1px solid #d1ffe0;
+}
+
+#tabs ul {
+	margin: 0;
+	padding: 5px 5px 0 40px;
+	list-style: none;
+}
+
+#tabs li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+#tabs a {
+	float: right;
+	background: url("../images/tableft1.gif") no-repeat left top;
+	margin: 0;
+	padding: 0 0 0 4px;
+	text-decoration: none;
+}
+
+#tabs a span {
+	float: left;
+	display: block;
+	background: url("../images/tabright1.gif") no-repeat right top;
+	padding: 5px 15px 4px 6px;
+	color: #627EB7;
+}
+
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a span {
+	float: none;
+}
+
+/* End IE5-Mac hack */
+#tabs a:hover span {
+	color: #627EB7;
+}
+
+#tabs a:hover {
+	background-position: 0% -42px;
+}
+
+#tabs a:hover span {
+	background-position: 100% -42px;
+}

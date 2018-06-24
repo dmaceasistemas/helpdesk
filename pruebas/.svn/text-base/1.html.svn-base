@@ -1,0 +1,20 @@
+<html>
+<body>
+<!-- Copiar dentro del tag BODY -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function imprimir() {
+  if (window.print)
+    window.print()
+  else
+    alert("Disculpe, su navegador no soporta esta opción.");
+}
+
+// -->
+</SCRIPT>
+
+<A HREF="javascript:imprimir()">Imprimir Página Web</A>
+
+</body>
+</html>

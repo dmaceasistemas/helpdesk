@@ -1,0 +1,42 @@
+/******************************************************************************
+* Software: Sistema de Helpdesk                                                *
+* Version:  1.0                                                                *
+* Date:     17-03-2006                                                         *
+* Author:   Jose Luis Estevez                                                  *
+* License:                                                                     *
+* Note:                                                                        *
+* Company:  Ministerio de Agriculura y Tierras                                 *
+* Web:      www.mat.gob.ve                                                     *
+*******************************************************************************/
+
+#login{
+	border:solid;
+	border-color:#244f1d;
+	border-width:1px;
+}
+
+#input_text{
+	border-width:1px;
+	border-color: #123456;
+		color: #244f1d;
+}
+
+#input_text:focus{
+	background-color: #ffffea;
+	border-color: #765;
+}
+
+#texto{
+	color: #244f1d;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#boton{
+	background-color: #37842d;
+	color: white;
+	font-weight: bold;
+	font-style: italic;
+	border-width: 1px;
+
+}
